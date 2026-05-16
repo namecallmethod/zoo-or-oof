@@ -1,0 +1,5 @@
+local remote = game:GetService('ReplicatedStorage'):WaitForChild('Net')
+
+for _,v in workspace:QueryDescendants('Folder#Gameplay > Folder#Props > Model') do
+    remote:FireServer('Map.destroyProps', v.Name, v:GetPivot())
+end
